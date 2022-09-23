@@ -1,3 +1,20 @@
+# Pros/Cons
+
+## Pros
+
+- minimum deps. only parcel and nodemon.
+- 1 dist/index.js includes node_modules.
+
+## Cons
+
+- node_modules cannot exec minify
+  - package.json / targets.main.minify option is not working.
+- nest.js cannot support?
+  - In the case of nest.js, there is a dependency that for some reason requires additional installation.
+  - In other words, even express.js may hit a case that does not work someday.
+- parcel is not support jest
+  - should use vitest or something
+
 ## Start dev
 
 ```sh
