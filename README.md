@@ -21,3 +21,11 @@ yarn dev
 > `⛔ Missing one or more of the following dependencies: tar, gpg`  
 > Run the following cmd:  
 > `$ brew install gpg`
+
+## Scripts
+
+### update dependencies
+
+```s
+yarn upgrade-interactive
+```
