@@ -22,6 +22,20 @@ yarn dev
 > Run the following cmd:  
 > `$ brew install gpg`
 
+## Run on Docker
+
+### Run all
+
+```sh
+docker-compose -f ./dockerfiles/docker-compose.yml up -d --build
+
+# down
+docker-compose -f ./dockerfiles/docker-compose.yml down
+
+# (clean up garbages sometimes)
+docker image prune
+```
+
 ## Scripts
 
 ### update dependencies
