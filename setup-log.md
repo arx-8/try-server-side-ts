@@ -12,3 +12,11 @@ yarn config set defaultSemverRangePrefix ""
 yarn init -p -y
 yarn
 ```
+
+# setup nest.js
+
+```s
+yarn dlx @nestjs/cli new try-server-side-ts
+
+# merge ./ & ./try-server-side-ts manually ...
+```

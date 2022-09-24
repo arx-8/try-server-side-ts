@@ -1,11 +1,8 @@
-type Human = {
-  name: string
-  lv: number
-}
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 
-const h: Human = {
-  lv: 10,
-  name: "tom",
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  await app.listen(3000);
 }
-
-console.log("Hello, ", h)
+bootstrap();
