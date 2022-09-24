@@ -1,3 +1,18 @@
+# Pros/Cons
+
+## Pros
+
+- Almost the same as express.js.
+- minimum deps. only esbuild and nodemon.
+- 1 dist/index.js includes node_modules.
+- minify, tree shaking, source map, ... All working.
+
+## Cons
+
+- I can't think of any. Best choice for server-side JS.
+- `esbuild.BuildOptions.bundle = false` is not working.
+  - If this could be done, it might make builds even faster during development.
+
 ## Start dev
 
 ```sh
