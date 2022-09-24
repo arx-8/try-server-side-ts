@@ -1,3 +1,18 @@
+# Pros/Cons
+
+## Pros
+
+- nest.js is one of the most famous web frameworks ... are you serious?
+
+## Cons
+
+- es decorators is not working.
+- requires a large amount of dependence for bundling. something is wrong.
+- default nest.js build/bundle is too slow.
+- can not bundle = fat docker runtime container.
+
+I would not adopt this framework.
+
 ## Start dev
 
 ```sh
