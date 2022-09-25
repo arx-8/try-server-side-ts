@@ -1,3 +1,15 @@
+# Pros/Cons
+
+## Pros
+
+- minimum deps. only esbuild and nodemon.
+- 1 dist/index.js includes node_modules.
+- minify, tree shaking, source map, ... All working.
+
+## Cons
+
+- I can't think of any. Best choice for server-side JS.
+
 ## Start dev
 
 ```sh
