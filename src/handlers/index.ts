@@ -3,6 +3,7 @@ import _ from "lodash"
 import sum from "lodash/sum"
 
 export const indexGet: RequestHandler<never, string> = (_, res) => {
-  console.log(sum([1, 2, 3]))
+  // console.log(sum([1, 2, 3]))
+  console.log("indexGet called")
   res.send("Hello, world!")
 }
