@@ -1,11 +1,15 @@
-type Human = {
-  name: string
-  lv: number
-}
+import express, { Request, Response } from "express"
+import _ from "lodash"
+import sortBy from "lodash/sortBy"
 
-const h: Human = {
-  lv: 10,
-  name: "tom",
-}
+const app = express()
 
-console.log("Hello, ", h)
+app.get("/", (_req: Request, res: Response) => {
+  // console.log(_)
+  // console.log(sortBy)
+  res.send("Hello World!")
+})
+
+app.listen(3000, () => {
+  console.log("Example app listening on port 3000!")
+})
