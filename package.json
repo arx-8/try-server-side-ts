@@ -3,15 +3,21 @@
   "packageManager": "yarn@3.2.3",
   "private": true,
   "scripts": {
-    "build": "node ./esbuild.js",
+    "build": "node ./scripts/production.js",
+    "dev": "node ./scripts/dev.js",
     "lint-dry": "run-p --continue-on-error 'lint:*'",
     "lint:tsc": "tsc --noEmit",
     "test": "echo No test yet."
   },
   "devDependencies": {
+    "@types/lodash": "4.14.185",
     "@types/node": "18.7.18",
     "esbuild": "0.15.9",
     "npm-run-all": "4.1.5",
     "typescript": "4.8.3"
+  },
+  "dependencies": {
+    "fastify": "4.6.0",
+    "lodash": "4.17.21"
   }
 }
