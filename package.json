@@ -3,8 +3,8 @@
   "packageManager": "yarn@3.2.3",
   "private": true,
   "scripts": {
-    "lint:tsc": "tsc --noEmit",
     "lint-dry": "run-p --continue-on-error 'lint:*'",
+    "lint:tsc": "tsc --noEmit",
     "test": "echo No test yet."
   },
   "devDependencies": {
