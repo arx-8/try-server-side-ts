@@ -48,6 +48,26 @@ docker-compose -f ./dockerfiles/docker-compose.yml down
 docker image prune
 ```
 
+### Run only DB
+
+```sh
+docker-compose -f ./dockerfiles/docker-compose.yml up -d db
+```
+
+### Connect DB
+
+```sh
+mysql -uroot -ptoor -h 127.0.0.1 -P 30002
+```
+
+Try:
+
+```sql
+show databases;
+use app_db;
+show tables;
+```
+
 ## Scripts
 
 ### update dependencies

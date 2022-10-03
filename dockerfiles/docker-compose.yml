@@ -7,9 +7,32 @@ services:
       context: ../
       dockerfile: ./dockerfiles/app/Dockerfile
     networks:
-      - app
+      - app-nw
     ports:
       - 30001:30001
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0.30
+    user: 1000:1000
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: app_db
+      TZ: Asia/Tokyo
+    volumes:
+      - ./db/volume:/var/lib/mysql
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - app-nw
+    ports:
+      - 30002:3306
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD -P 3306
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 networks:
-  app:
+  app-nw:
