@@ -21,6 +21,9 @@ cat .tool-versions | cut -d' ' -f1 | grep "^[^\#]" | xargs -i echo {}
 
 asdf install
 
+# setup env variables
+cp .env.example .env
+
 # install node packages
 yarn
 
