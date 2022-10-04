@@ -9,7 +9,7 @@
     "dev": "(yarn dev:watch) & sleep 3 && yarn dev:start",
     "lint-dry": "run-p --continue-on-error 'lint:*'",
     "lint:tsc": "tsc --noEmit",
-    "test-ci": "jest --ci",
+    "test-ci": "jest --coverage",
     "test": "jest --watch"
   },
   "devDependencies": {
