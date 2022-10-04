@@ -1,4 +1,5 @@
 import express from "express"
+import { connectDB } from "src/data/database"
 import { indexGet } from "src/handlers"
 
 const app = express()
@@ -9,6 +10,9 @@ const port = 30001
 const server = app.listen(port, () => {
   console.log(`⚡️ Server is running on port ${port}!`)
 })
+
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+connectDB()
 
 /**
  * For Docker graceful shutdown
