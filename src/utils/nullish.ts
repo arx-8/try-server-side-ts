@@ -1,10 +1,10 @@
 export const nonNullish = <T>(
   x: T | null | undefined,
-  extraMessage: string,
+  extraMessage: string
 ): T => {
   if (x == null) {
     throw new Error(
-      `Unexpected null or undefined. Should exist value. (${extraMessage})`,
+      `Unexpected null or undefined. Should exist value. (${extraMessage})`
     )
   }
 

@@ -6,7 +6,7 @@ describe("nonNullish", () => {
     expect.hasAssertions()
 
     // ## Arrange ##
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any -- allowed for special testing
     const maybe: string | undefined = "hello" as any
 
     // ## Act ##
@@ -26,7 +26,8 @@ describe("nonNullish", () => {
       }
       rate: number
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any -- allowed for special testing
     const maybe: SomeObject | undefined = undefined as any
 
     // ## Act ##
@@ -34,7 +35,7 @@ describe("nonNullish", () => {
     expect(() => {
       expectType<SomeObject>(nonNullish(maybe, "why"))
     }).toThrowErrorMatchingInlineSnapshot(
-      `"Unexpected null or undefined. Should exist value. (why)"`,
+      `"Unexpected null or undefined. Should exist value. (why)"`
     )
   })
 })

@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-member-accessibility */
+/* eslint-disable @typescript-eslint/no-magic-numbers */
+/* eslint-disable jest/max-expects */
+/* eslint-disable jest/require-hook */
 /**
  * This is a workaround to suppress the error message `Cannot compile namespaces when the '--isolatedModules' flag is provided.`.
  * @see https://github.com/Microsoft/TypeScript/issues/15230
@@ -44,10 +48,11 @@ describe("when in doubt, use `toStrictEqual`. It is the most reliable.", () => {
     /* eslint-disable jest/prefer-strict-equal */
     expect(new Protein("lemon")).toEqual({ flavor: "lemon" })
     expect(new Protein("lemon")).not.toStrictEqual({ flavor: "lemon" })
-    /* eslint-enable */
+    /* eslint-enable jest/prefer-strict-equal */
   })
 
   class Human {
+    // eslint-disable-next-line @typescript-eslint/parameter-properties
     constructor(private readonly name: string, private readonly age: number) {}
 
     public getGreet(): string {
@@ -79,7 +84,7 @@ describe("when in doubt, use `toStrictEqual`. It is the most reliable.", () => {
     expect(new Human("taro", 20)).not.toBe(new Human("taro", 20))
     const classInstance = new Human("taro", 20)
     expect(classInstance).toBe(classInstance)
-    /* eslint-enable */
+    /* eslint-enable sort-keys-fix/sort-keys-fix */
   })
 
   it("toEqual is `deep equal`", () => {
@@ -93,6 +98,7 @@ describe("when in doubt, use `toStrictEqual`. It is the most reliable.", () => {
     expect(false).toEqual(false)
 
     // Array
+    /* eslint-disable jest/prefer-strict-equal */
     expect([1, 2, 4]).toEqual([1, 2, 4])
     expect([1, 2, 4]).not.toEqual([1, 4, 2])
 
@@ -106,7 +112,7 @@ describe("when in doubt, use `toStrictEqual`. It is the most reliable.", () => {
     expect(new Human("taro", 20)).toEqual(new Human("taro", 20))
     const classInstance = new Human("taro", 20)
     expect(classInstance).toEqual(classInstance)
-    /* eslint-enable */
+    /* eslint-enable jest/prefer-strict-equal */
   })
 })
 
@@ -116,12 +122,12 @@ describe("snapshot test", () => {
     expect({ a: 0, b: "b1" }).toMatchSnapshot()
     /* eslint-disable sort-keys-fix/sort-keys-fix */
     expect({ b: "b1", a: 0 }).toMatchInlineSnapshot(`
-{
-  "a": 0,
-  "b": "b1",
-}
-`)
-    /* eslint-enable */
+      {
+        "a": 0,
+        "b": "b1",
+      }
+    `)
+    /* eslint-enable sort-keys-fix/sort-keys-fix */
   })
 })
 
