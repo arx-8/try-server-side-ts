@@ -1,0 +1,31 @@
+@startuml erd
+
+entity "organizations" {
+    *id : uint **<<PK>>**
+    --
+    *name: text
+}
+
+entity "users" {
+    *id : uint **<<PK>>**
+    --
+    *name: text
+    favorite_book_id: uint
+}
+
+entity "books" {
+    *id : uint **<<PK>>**
+    --
+    *name: text
+}
+
+' TODO implements multiple favorite_book
+' entity "favorite_books" {
+'     *user_id : uint **<<CompositePK>>**
+'     *book_id : uint **<<CompositePK>>**
+' }
+
+organizations ||--o{ users
+users }o--|| books
+
+@enduml
