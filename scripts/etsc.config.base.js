@@ -5,12 +5,10 @@
  */
 const config = {
   esbuild: {
-    minify: false,
+    platform: "node",
     target: "es2015",
   },
   prebuild: async () => {
-    console.log("prebuild")
-
     // clean up dist folder
     const rimraf = (await import("rimraf")).default
     rimraf.sync("./dist")
