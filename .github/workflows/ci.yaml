@@ -37,4 +37,8 @@ jobs:
 
       - run: yarn run lint-dry
 
-      - run: yarn run test
+      - name: Test with Coverage
+        run: |
+          yarn run test-ci
+          echo '# Coverage :rocket:' >> $GITHUB_STEP_SUMMARY
+          cat coverage/report.txt | node scripts/formatCoverage.js >> $GITHUB_STEP_SUMMARY

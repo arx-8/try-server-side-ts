@@ -5,6 +5,7 @@
       "node": "16"
     }
   },
+  "exclude": ["^.+\\.test\\.(t|j)sx?$"],
   "jsc": {
     "parser": {
       "syntax": "typescript"
