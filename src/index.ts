@@ -1,14 +1,9 @@
-import express, { Request, Response } from "express"
-import _ from "lodash"
-import sortBy from "lodash/sortBy"
+import express from "express"
+import { indexGet } from "src/handlers"
 
 const app = express()
 
-app.get("/", (_req: Request, res: Response) => {
-  // console.log(_)
-  console.log(sortBy)
-  res.send("Hello World!")
-})
+app.get("/", indexGet)
 
 if (import.meta.env.PROD) {
   const port = 30001
