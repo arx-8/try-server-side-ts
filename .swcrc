@@ -3,6 +3,9 @@
   "jsc": {
     "parser": {
       "syntax": "typescript"
+    },
+    "paths": {
+      "src/*": ["src/*"]
     }
   },
   "env": {
