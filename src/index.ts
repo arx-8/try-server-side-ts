@@ -1,10 +1,24 @@
 import express from "express"
-import { indexGet } from "src/handlers/index"
+import { indexGet } from "src/handlers"
 
 const app = express()
 
 app.get("/", indexGet)
 
-app.listen(3000, () => {
-  console.log("Example app listening on port 3000!")
+const port = 30001
+const server = app.listen(port, () => {
+  console.log(`⚡️ Server is running on port ${port}!`)
 })
+
+/**
+ * For Docker graceful shutdown
+ */
+const shutdownGraceful: NodeJS.SignalsListener = (signal) => {
+  console.log(`⚡️ Received signal to terminate: ${signal}`)
+  server.close(() => {
+    console.log("⚡️ Server terminated gracefully.")
+    process.exit()
+  })
+}
+process.on("SIGINT", shutdownGraceful)
+process.on("SIGTERM", shutdownGraceful)
