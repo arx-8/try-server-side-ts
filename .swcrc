@@ -9,5 +9,8 @@
     "targets": {
       "node": "16"
     }
+  },
+  "module": {
+    "type": "commonjs"
   }
 }
