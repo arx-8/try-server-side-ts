@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/dist/index.js",
+      "preLaunchTask": "dev_build"
+    }
+  ]
+}

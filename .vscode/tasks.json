@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev_build",
+      "command": "yarn dev:build",
+      "type": "shell",
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}
