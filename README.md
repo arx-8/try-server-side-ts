@@ -1,3 +1,16 @@
+# Pros/Cons
+
+## Pros
+
+- minimum deps. only swc and nodemon.
+- no bundle is safety.
+- hot reload, minify, source map, debugger, multistage build, jest ... All working.
+
+## Cons
+
+- Hard to read npm-scripts.
+- lodash-es is not working (ERR_REQUIRE_ESM)
+
 ## Start dev
 
 ```sh
