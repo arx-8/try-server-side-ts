@@ -1,11 +1,19 @@
-type Human = {
-  name: string
-  lv: number
+import express, { Request, Response } from "express"
+import _ from "lodash"
+import sortBy from "lodash/sortBy"
+
+const app = express()
+
+app.get("/", (_req: Request, res: Response) => {
+  // console.log(_)
+  console.log(sortBy)
+  res.send("Hello World!")
+})
+
+if (import.meta.env.PROD) {
+  const port = 30001
+  console.log(`Example app listening on port ${port}!`)
+  app.listen(port)
 }
 
-const h: Human = {
-  lv: 10,
-  name: "tom",
-}
-
-console.log("Hello, ", h)
+export const viteNodeApp = app
