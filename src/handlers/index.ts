@@ -4,5 +4,6 @@ import sum from "lodash/sum"
 
 export const indexGet: RequestHandler<never, string> = (_, res) => {
   console.log(sum([1, 2, 3]))
+  debugger
   res.send("Hello, world!")
 }
