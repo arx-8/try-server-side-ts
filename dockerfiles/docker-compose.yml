@@ -6,6 +6,8 @@ services:
       # For Dockerfile COPY
       context: ../
       dockerfile: ./dockerfiles/app/Dockerfile
+    env_file:
+      - ./../.env
     networks:
       - app-nw
     ports:

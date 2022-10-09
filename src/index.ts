@@ -1,13 +1,13 @@
 import express from "express"
+import { SERVER_PORT } from "src/constants/env"
 import { indexGet } from "src/handlers"
 
 const app = express()
 
 app.get("/", indexGet)
 
-const port = 30001
-const server = app.listen(port, () => {
-  console.log(`⚡️ Server is running on port ${port}!`)
+const server = app.listen(SERVER_PORT, () => {
+  console.log(`⚡️ Server is running on port ${SERVER_PORT}!`)
 })
 
 /**
